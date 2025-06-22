@@ -1,0 +1,84 @@
+Enable Wayland & Enter Wayland Session
+======================================
+
+sudo nano /etc/gdm3/custom.conf
+
+Find the line:
+
+#WaylandEnable=false
+
+Change it to:
+
+WaylandEnable=true
+
+Logout and select Wayland at login 
+
+
+Waydroid Installation
+=======================
+
+sudo apt update && sudo apt upgrade -y
+sudo apt install curl ca-certificates -y
+curl https://repo.waydro.id | sudo bash
+sudo apt install waydroid -y
+sudo apt update && sudo apt upgrade -y
+sudo waydroid init -s GAPPS -f
+
+sudo ufw allow 67
+sudo ufw allow 53
+sudo ufw default allow FORWARD
+
+sudo systemctl enable waydroid-container
+
+Restart your system
+
+
+If the waydroid init command throws an error, install the required kernel modules
+==================================================================================
+
+git clone https://github.com/choff/anbox-modules
+cd anbox-modules
+sudo ./INSTALL.sh
+sudo modprobe binder_linux
+sudo modprobe ashmem_linux
+cd ~
+
+
+
+Google Play Certification
+==========================
+
+
+sudo waydroid shell
+
+Enter the following command to get your device id:
+
+ANDROID_RUNTIME_ROOT=/apex/com.android.runtime ANDROID_DATA=/data ANDROID_TZDATA_ROOT=/apex/com.android.tzdata ANDROID_I18N_ROOT=/apex/com.android.i18n sqlite3 /data/data/com.google.android.gsf/databases/gservices.db "select * from main where name = \"android_id\";"
+
+Go to this url and submit your device id:
+
+https://www.google.com/android/uncertified
+
+
+Restart your system once again
+
+It should get certified in 30 minutes.
+
+  
+Enable ARM Support
+==================
+  
+sudo apt install lzip
+git clone --depth=1 https://github.com/casualsnek/waydroid_script
+cd waydroid_script
+sudo apt update
+sudo apt install python3-pip
+sudo python3 -m pip install -r requirements.txt
+sudo python3 waydroid_extras.py -l
+ls
+sudo python3 main.py install libhoudini
+waydroid session stop
+
+Restart your system once again and your Waydroid app will have ARM support.
+  
+
