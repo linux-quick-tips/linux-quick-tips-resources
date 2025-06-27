@@ -1,1 +1,15 @@
 
+#Install Flatpak
+sudo apt install flatpak
+=================================================
+# Check which installation type you have
+flatpak list --columns=app,installation | grep Alpaca
+
+# If you have a system installation
+flatpak install com.jeffser.Alpaca.Plugins.Ollama
+
+# If you have a user installation
+flatpak install --user com.jeffser.Alpaca.Plugins.Ollama
+
+Source: https://github.com/Jeffser/Alpaca/wiki/Installing-Ollama
+===================================================================
