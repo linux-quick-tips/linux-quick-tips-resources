@@ -68,17 +68,28 @@ It should get certified in 30 minutes.
 Enable ARM Support
 ==================
   
-sudo apt install lzip
+# Step 1: Install system dependencies
+sudo apt install lzip python3-venv git
+
+# Step 2: Clone the script repository
 git clone --depth=1 https://github.com/casualsnek/waydroid_script
 cd waydroid_script
-sudo apt update
-sudo apt install python3-pip
-sudo python3 -m pip install -r requirements.txt
-sudo python3 waydroid_extras.py -l
+
+# Step 3: Create and activate a virtual environment
+python3 -m venv venv
+source venv/bin/activate
+
+# Step 4: Upgrade pip and install Python dependencies inside venv
+pip install --upgrade pip
+pip install -r requirements.txt
+
+# Step 5: Run the required scripts using the virtual environment
+python3 waydroid_extras.py -l
 ls
-sudo python3 main.py install libhoudini
+python3 main.py install libhoudini
+
+# Step 6: Stop the Waydroid session
 waydroid session stop
 
-Restart your system once again and your Waydroid app will have ARM support.
-  
+# Final Step: Restart your system
 
