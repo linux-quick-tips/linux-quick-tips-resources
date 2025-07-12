@@ -1,6 +1,5 @@
 waydroid session stop
-sudo waydroid session stop
-sudo waydroid container stop
+waydroid container stop
 sudo apt remove waydroid
 sudo rm -rf /var/lib/waydroid
 rm -rf ~/.waydroid
