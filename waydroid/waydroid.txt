@@ -29,7 +29,7 @@ sudo waydroid init -s GAPPS -f (if you need Google Playstore)
 
 sudo ufw allow 67
 sudo ufw allow 53
-sudo ufw default allow FORWARD
+
 
 sudo systemctl enable waydroid-container
 
