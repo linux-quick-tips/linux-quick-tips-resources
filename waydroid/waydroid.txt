@@ -22,7 +22,10 @@ sudo apt install curl ca-certificates -y
 curl https://repo.waydro.id | sudo bash
 sudo apt install waydroid -y
 sudo apt update && sudo apt upgrade -y
-sudo waydroid init -s GAPPS -f
+
+sudo waydroid init (if you don't need Google Playstore)
+or
+sudo waydroid init -s GAPPS -f (if you need Google Playstore)
 
 sudo ufw allow 67
 sudo ufw allow 53
