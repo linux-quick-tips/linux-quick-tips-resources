@@ -1,0 +1,17 @@
+Find your external network interface name 
+
+ip route show
+
+Look for a line starting with default. 
+
+default via 192.168.1.1 dev eth0 proto dhcp metric 100
+
+In this example, eth0 is your external network interface
+
+sudo ufw route allow in on waydroid0 out on eth0
+sudo ufw route allow in on eth0 out on waydroid0
+
+Besides, allow the following ports:
+
+sudo ufw allow 53/udp
+sudo ufw allow 67/udp
