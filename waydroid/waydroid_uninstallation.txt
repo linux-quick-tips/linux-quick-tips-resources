@@ -8,4 +8,4 @@ rm -rf ~/.local/share/waydroid
 rm -rf ~/.local/share/applications/*waydroid*
 sudo chown -R $USER:$USER ~/waydroid_script
 rm -rf ~/waydroid_script
-
+sudo rm -rf /tmp/houdiniunpack/
