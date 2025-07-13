@@ -88,7 +88,7 @@ pip install -r requirements.txt
 
 # Step 5: Run the required scripts using the virtual environment
 
-python3 main.py install libhoudini
+sudo venv/bin/python3 main.py install libhoudini
 
 # Step 6: Stop the Waydroid session
 waydroid session stop
