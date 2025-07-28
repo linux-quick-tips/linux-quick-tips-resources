@@ -1,1 +1,44 @@
 
+sudo apt update && sudo apt upgrade -y
+sudo apt install curl ca-certificates mesa-utils python3-pip
+
+curl -s https://repo.waydro.id | sudo bash
+sudo apt update
+
+sudo apt install waydroid
+
+cd ~/Downloads
+
+wget -O system-image.zip "https://sourceforge.net/projects/waydroid/files/images/system/lineage/waydroid_x86_64/lineage-18.1-20250628-VANILLA-waydroid_x86_64-system.zip/download"
+
+wget -O vendor-image.zip "https://sourceforge.net/projects/waydroid/files/images/vendor/waydroid_x86_64/lineage-18.1-20250628-MAINLINE-waydroid_x86_64-vendor.zip/download"
+
+sudo mkdir -p /etc/waydroid-extra/images
+sudo unzip system-image.zip -d /etc/waydroid-extra/images
+sudo unzip vendor-image.zip -d /etc/waydroid-extra/images
+ls -l /etc/waydroid-extra/images/system.img /etc/waydroid-extra/images/vendor.img
+
+sudo waydroid init -f -i /etc/waydroid-extra/images
+
+sudo systemctl start waydroid-container.service
+waydroid session start
+systemctl status waydroid-container.service   
+
+
+git clone https://github.com/casualsnek/waydroid_script
+cd waydroid_script
+python3 -m venv venv
+venv/bin/pip install -r requirements.txt
+sudo venv/bin/python3 main.py
+
+Choose Android 11, gapps, libhoudini, libndk, and magisk 
+
+
+sudo pip3 install InquirerPy tqdm
+sudo venv/bin/python3 main.py certified
+
+waydroid session stop
+sudo systemctl stop waydroid-container.service
+
+
+
