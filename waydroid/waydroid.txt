@@ -46,52 +46,23 @@ sudo modprobe binder_linux
 sudo modprobe ashmem_linux
 cd ~
 
-
-
-Google Play Certification
-==========================
-
-
-sudo waydroid shell
-
-Enter the following command to get your device id:
-
-ANDROID_RUNTIME_ROOT=/apex/com.android.runtime ANDROID_DATA=/data ANDROID_TZDATA_ROOT=/apex/com.android.tzdata ANDROID_I18N_ROOT=/apex/com.android.i18n sqlite3 /data/data/com.google.android.gsf/databases/gservices.db "select * from main where name = \"android_id\";"
-
-Go to this url and submit your device id:
-
-https://www.google.com/android/uncertified
-
-
-Restart your system once again
-
-It should get certified in 30 minutes.
-
-  
+ 
 Enable ARM Support
 ==================
   
-# Step 1: Install system dependencies
-sudo apt install lzip python3-venv git
-
-# Step 2: Clone the script repository
-git clone --depth=1 https://github.com/casualsnek/waydroid_script
+git clone https://github.com/casualsnek/waydroid_script
 cd waydroid_script
-
-# Step 3: Create and activate a virtual environment
 python3 -m venv venv
-source venv/bin/activate
+venv/bin/pip install -r requirements.txt
+sudo venv/bin/python3 main.py
 
-# Step 4: Upgrade pip and install Python dependencies inside venv
-pip install --upgrade pip
-pip install -r requirements.txt
+Choose Android 11, gapps, libhoudini, libndk, and magisk 
 
-# Step 5: Run the required scripts using the virtual environment
 
-sudo venv/bin/python3 main.py install libhoudini
+sudo pip3 install InquirerPy tqdm
+sudo venv/bin/python3 main.py certified
 
-# Step 6: Stop the Waydroid session
 waydroid session stop
+sudo systemctl stop waydroid-container.service
 
-# Final Step: Restart your system
 
