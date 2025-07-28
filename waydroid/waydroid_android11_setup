@@ -37,6 +37,8 @@ Choose Android 11, gapps, libhoudini, libndk, and magisk
 sudo pip3 install InquirerPy tqdm
 sudo venv/bin/python3 main.py certified
 
+Submit the id here: https://www.google.com/android/uncertified
+
 waydroid session stop
 sudo systemctl stop waydroid-container.service
 
