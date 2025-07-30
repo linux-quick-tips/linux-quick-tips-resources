@@ -1,1 +1,3 @@
-this is some text
+sudo add-apt-repository ppa:ubuntuhandbook1/conkymanager2
+sudo apt update
+sudo apt install conky-manager2
