@@ -1,0 +1,14 @@
+nano ~/.local/share/applications/todo.desktop
+
+[Desktop Entry]
+Name=Todo List
+Comment=Open todo.txt with Mousepad
+Exec=mousepad /home/renee/Documents/todo.txt
+Icon=text-x-generic
+Terminal=false
+Type=Application
+Categories=Utility;TextEditor;
+StartupNotify=true
+
+
+
