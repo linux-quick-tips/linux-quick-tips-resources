@@ -2,6 +2,16 @@
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl ca-certificates mesa-utils python3-pip lzip python3.10-venv
 
+If the waydroid init command throws an error, install the required kernel modules
+==================================================================================
+
+git clone https://github.com/choff/anbox-modules
+cd anbox-modules
+sudo ./INSTALL.sh
+sudo modprobe binder_linux
+sudo modprobe ashmem_linux
+cd ~
+
 curl -s https://repo.waydro.id | sudo bash
 sudo apt update
 
