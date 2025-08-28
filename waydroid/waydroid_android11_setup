@@ -1,6 +1,6 @@
 
 sudo apt update && sudo apt upgrade -y
-sudo apt install curl ca-certificates mesa-utils python3-pip lzip
+sudo apt install curl ca-certificates mesa-utils python3-pip lzip python3.10-venv
 
 curl -s https://repo.waydro.id | sudo bash
 sudo apt update
