@@ -1,0 +1,9 @@
+sudo visudo
+Add this to the bottom:
+username ALL=NOPASSWD: /sbin/shutdown
+save the changes and exit
+
+Next, set a keyboard shortcut
+command: sudo shutdown now -h
+shortcut: any desired combination 
+i used ctrl+shift+s
