@@ -1,0 +1,25 @@
+Enable Firewall:
+===============
+
+sudo ufw enable
+
+Install Firejail:
+=================
+
+sudo apt install firejail
+
+Create a keyboard shortcut:
+==========================
+
+Name: Firefox Private
+Command: firejail --private firefox --private-window -no-remote
+Shortcut: firejail --private firefox --private-window -no-remote
+
+Configure the instance after it runs:
+======================================
+
+Enable uBlock Origin
+Disable Ask to Save Passwords
+Disble Autofill
+Enable HTTPS-Only Mode in All Windows
+Disable Firefox Data Collection and Use
