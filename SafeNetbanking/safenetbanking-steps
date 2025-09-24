@@ -13,7 +13,7 @@ Create a keyboard shortcut:
 
 Name: Firefox Private
 Command: firejail --private firefox --private-window -no-remote
-Shortcut: firejail --private firefox --private-window -no-remote
+Shortcut: Ctrl + Shift + N
 
 Configure the instance after it runs:
 ======================================
