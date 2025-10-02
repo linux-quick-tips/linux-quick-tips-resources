@@ -1,0 +1,15 @@
+touch note.txt
+nano ~/.local/share/applications/note.desktop
+
+[Desktop Entry]
+Name=Quick Note
+Comment=Open my note.txt quickly
+Exec=mousepad /home/john/note.txt
+Icon=accessories-text-editor
+Terminal=false
+Type=Application
+Categories=Utility;
+
+chmod +x ~/.local/share/applications/note.desktop
+
+Lastly, ook for the desktop entry in the application menu and add it to the dock.
