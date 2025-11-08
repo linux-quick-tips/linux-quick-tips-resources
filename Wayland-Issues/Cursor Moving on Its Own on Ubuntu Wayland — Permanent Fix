@@ -1,0 +1,25 @@
+Disable the TrackPoint in Wayland
+=================================
+
+echo $XDG_SESSION_TYPE 
+
+grep -i trackpoint /proc/bus/input/devices
+
+sudo nano /etc/udev/rules.d/99-disable-trackpoint.rules
+
+SUBSYSTEM=="input", ATTRS{name}=="TPPS/2 IBM TrackPoint", ENV{ID_INPUT_POINTINGSTICK}="0", ENV{ID_INPUT}="0"
+
+[Note: My trackpoint is TPPS/2 IBM TrackPoint. You can replace it with your one.]
+
+
+sudo udevadm control --reload-rules && sudo udevadm trigger
+sudo reboot
+
+
+
+Undo / Re-enable TrackPoint (if needed)
+=======================================
+
+sudo rm /etc/udev/rules.d/99-disable-trackpoint.rules
+sudo reboot
+
