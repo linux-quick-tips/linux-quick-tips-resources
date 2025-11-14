@@ -11,6 +11,9 @@ SUBSYSTEM=="input", ATTRS{name}=="TPPS/2 IBM TrackPoint", ENV{ID_INPUT_POINTINGS
 
 [Note: My trackpoint is TPPS/2 IBM TrackPoint. You can replace it with your one.]
 
+If you experience mouse getting stuck or sluggish, use this instead in the 99.disable-trackpoint.rules file:
+
+ATTRS{name}=="TPPS/2 IBM TrackPoint", ENV{LIBINPUT_IGNORE_DEVICE}="1"
 
 sudo udevadm control --reload-rules && sudo udevadm trigger
 sudo reboot
