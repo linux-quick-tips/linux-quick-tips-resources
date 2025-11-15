@@ -1,0 +1,21 @@
+Confirm Magic SysRq is enabled.
+Run this once (while you can see the screen):
+
+cat /proc/sys/kernel/sysrq
+
+If the output is 1, it is enabled.
+
+If not, enable it permanently:
+
+echo "kernel.sysrq = 1" | sudo tee /etc/sysctl.d/99-sysrq.conf
+sudo sysctl -p /etc/sysctl.d/99-sysrq.conf
+
+Hold Alt + SysRq, then press R E I S U O
+
+
+R – return control to keyboard
+E – end processes
+I – kill remaining processes
+S – sync disks
+U – remount disks read-only
+O – power off
